@@ -1,1 +1,1 @@
-"# Vaultly — a digital banking demo (Next.js, Node, MongoDB)"
+# Vaultly _ a digital banking demo (Next.js, Node, MongoDB)
