@@ -1,0 +1,34 @@
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: vaultly-api
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGO_URI=mongodb://db:27017/vaultly
+    depends_on:
+      - db
+    networks:
+      - vaultly-network
+    restart: unless-stopped
+
+  db:
+    image: mongo:7
+    container_name: vaultly-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - vaultly-network
+    restart: unless-stopped
+
+networks:
+  vaultly-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
