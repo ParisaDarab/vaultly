@@ -7,6 +7,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-      - run: npm install
-      - run: npm test
+          node-version: "20"
+
+      - name: Install dependencies
+        working-directory: ./api
+        run: npm ci
+
+      - name: Run the project
+        working-directory: ./api
+        run: npm start
