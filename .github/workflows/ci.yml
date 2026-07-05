@@ -13,7 +13,7 @@ jobs:
         working-directory: ./api
         run: npm i
         
-      -name: typeScript build
+      - name: typeScript build
        working-directory: ./api
        run: npm build 
 
