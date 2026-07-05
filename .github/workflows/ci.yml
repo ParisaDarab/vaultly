@@ -12,7 +12,10 @@ jobs:
       - name: Install dependencies
         working-directory: ./api
         run: npm i
+      -name: typeScript build
+      -working-directory: ./api
+      -run: npm build 
 
       - name: Run the project
-        working-directory: ./api
+        working-directory: ./api/dist
         run: npm start
