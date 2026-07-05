@@ -11,7 +11,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: ./api
-        run: npm ci
+        run: npm i
 
       - name: Run the project
         working-directory: ./api
